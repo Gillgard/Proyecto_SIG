@@ -1,1 +1,66 @@
-<p>signup works!</p>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="main-content">
+            <div class="card-header">
+                Resgistro de usuarios
+            </div>
+            <div class="card-body" id="marcos">
+                <form>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">🖊</span>
+                        <input type="text" class="form-control" placeholder="Nombre" name="f_name" required="required">
+                    </div><br>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">🖊</span>
+                        <input type="text" class="form-control" placeholder="Apellido" name="l_name" required="required">
+                    </div><br>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">📨</span>
+                        <input type="email" class="form-control" placeholder="Correo electrónico" name="user_email" required="required">
+                    </div><br>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">🔐</span>
+                        <input type="password" class="form-control" placeholder="Contraseña" name="user_pass" required="required">
+                    </div><br>
+                    <div id="centrado">
+                        <button id="signup" class="btn btn-info btn-lg">Regístrate</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="card-header">
+            Usuarios registrados
+        </div>
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellico</th>
+                <th scope="col">Correo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <button type="button" class="btn btn-outline-danger">Eliminar</button>
+              </tr>
+              <tr>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <button type="button" class="btn btn-outline-danger">Eliminar</button>
+              </tr>
+              <tr>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <button type="button" class="btn btn-outline-danger">Eliminar</button>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
