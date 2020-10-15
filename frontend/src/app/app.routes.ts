@@ -5,7 +5,7 @@ import { SignupComponent } from './components/signup/signup.component';
 const APP_ROUTES: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
-    { path: '**', pathMatch: 'full', redirectTo: 'wall' }
+    { path: '**', pathMatch: 'full', redirectTo: 'login' }
     
 ];
 
