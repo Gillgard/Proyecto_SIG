@@ -16,7 +16,6 @@ import { SignupComponent } from './components/signup/signup.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CosechaComponent } from './components/cosecha/cosecha.component';
 import { CorridaPiscinaComponent } from './components/corrida-piscina/corrida-piscina.component';
 import { ProveedorComponent } from './components/proveedor/proveedor.component';
@@ -28,7 +27,6 @@ import { ProveedorComponent } from './components/proveedor/proveedor.component';
     SignupComponent,
     NavbarComponent,
     FooterComponent,
-    DashboardComponent,
     CosechaComponent,
     CorridaPiscinaComponent,
     ProveedorComponent
