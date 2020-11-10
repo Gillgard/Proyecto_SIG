@@ -12,24 +12,18 @@ import { APP_ROUTING } from './app.routes';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { SignupComponent } from './components/signup/signup.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { CosechaComponent } from './components/cosecha/cosecha.component';
-import { CorridaPiscinaComponent } from './components/corrida-piscina/corrida-piscina.component';
-import { ProveedorComponent } from './components/proveedor/proveedor.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent,
     NavbarComponent,
     FooterComponent,
-    CosechaComponent,
-    CorridaPiscinaComponent,
-    ProveedorComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

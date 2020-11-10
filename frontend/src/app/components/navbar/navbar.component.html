@@ -1,42 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <ng-container>
-                <a class="navbar-brand" [routerLink]="['wall']">SAMACAN S.A.</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </ng-container>
-        </ul>
-        <ul class="navbar-nav mr-auto">
-            <ng-container>
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['cosecha']">Cosecha</a>
-                </li>
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['corrida-piscina']">Corrida-Piscina</a>
-                </li>
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['proveedor']">Proveedores</a>
-                </li>
-            </ng-container>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            <ng-container>
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['login']">Iniciar sesión</a>
-                </li>
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['signup']">Regístrate</a>
-                </li>
-            </ng-container>
-            <ul class="navbar-nav ml-auto">
-                <ng-template #loggedIn >
-                    <li class="nav-item">
-                        <a class="nav-link" style="cursor: pointer">Cerrar sesión</a>
-                    </li>
-                </ng-template>
-            </ul>
-        </ul>
-    </div>
-</nav>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+        <mat-toolbar color="primary">
+            <span>Menú</span>
+          </mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/login">Iniciar sesión</a>
+            <a mat-list-item routerLink="/dashboard">Dashboard</a>
+            <a mat-list-item>Cerrar sesión</a>      
+          </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <span>Contenido</span>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
