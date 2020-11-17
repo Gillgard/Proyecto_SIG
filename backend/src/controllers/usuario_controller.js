@@ -1,6 +1,8 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const oracledb = require('oracledb');
+const md5 = require('md5');
+
 
 const usuario_controller = {  };
 
@@ -32,10 +34,15 @@ usuario_controller.getHelp = async (req, res) => {
 
 usuario_controller.login = async (req, res) => {
     
-    var { nombre, password } = req.body 
+    var { usuario, password } = req.body 
     
+    grupo = 2;
+    user_pass = md5(password)
+
+    console.log(user_pass)
+
     try {
-        const result = await connection.execute('SELECT NOMBRE FROM USUARIO WHERE NOMBRE=:nombre AND PASSWORD=:password', [nombre, password],//no binds
+        const result = await connection.execute('SELECT MEMBERID FROM USUARIO WHERE MEMBERID=:usuario AND PASSMD5=:password AND GROUPID=:grupo', [usuario, user_pass, grupo],//no binds
         {
             outFormat: oracledb.OBJECT
         });
@@ -45,7 +52,7 @@ usuario_controller.login = async (req, res) => {
             return done(null, false, { message: 'Usuario no encontrado' })
         }else{
             console.log('Usuario encontrado')
-            const token = jwt.sign({ ID: result.rows[0].NOMBRE }, 'secretkey');
+            const token = jwt.sign({ ID: result.rows[0].MEMBERID }, 'secretkey');
             res.status(200).json( {token} )
         }
     } catch (error) {

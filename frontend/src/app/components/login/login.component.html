@@ -8,19 +8,20 @@
     <div class="col-sm-6">
         <div id="marcos"><br>
             <h2><strong>Sistema de información Gerencial</strong></h2><br>
-            <h4><strong>Instituto Tecnológico Superior José Ochoa León</strong></h4><br>
-            <form>
+            <h4><strong>Colegio de Bachillerato Dr. José Ochoa León</strong></h4><br>
+            <form (submit)="LoguearUsuario()">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">✉</span>
-                    <input type="email" class="form-control" placeholder="Correo electrónico" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                    <input type="text" class="form-control" [(ngModel)]="user.usuario" placeholder="Nombre de ususario" name="usuario" required="required">
                 </div>
                 <br>
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">🔐</span>
-                    <input type="password" class="form-control" placeholder="Contraseña" name="user_password" required="required">
+                    <input type="password" class="form-control" [(ngModel)]="user.password" placeholder="Contraseña" name="password" required="required">
                 </div><br>
+                <p style="color:red;">{{ alertaLogueo }}</p>
                 <div id="centrado">
-                    <button id="signup" class="btn btn-info btn-lg">Iniciar sesión</button><br>
+                    <button type="submit" class="btn btn-info btn-lg">Iniciar sesión</button><br>
                 </div>
             </form>
         </div>

@@ -1,16 +1,22 @@
 <mat-sidenav-container class="example-container">
     <mat-sidenav mode="side" opened>
-        <mat-toolbar color="primary">
+        <mat-toolbar style="background-color:#222222; color:white">
             <span>Menú</span>
           </mat-toolbar>
         <mat-nav-list>
-            <a mat-list-item routerLink="/login">Iniciar sesión</a>
-            <a mat-list-item routerLink="/dashboard">Dashboard</a>
-            <a mat-list-item>Cerrar sesión</a>      
-          </mat-nav-list>
+            <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+                <a mat-list-item [routerLink]="['login']">Iniciar sesión</a>
+            </ng-container>
+            <ng-container *ngIf="authService.loggedIn()">
+                <a mat-list-item [routerLink]="['dashboard']">Dashboard</a>
+            </ng-container>
+            <ng-template #loggedIn>
+                <a mat-list-item (click)="authService.logOut()">Cerrar sesión</a> 
+            </ng-template>
+        </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <mat-toolbar color="primary">
+        <mat-toolbar style="background-color:#222222; color:white">
             <span>Contenido</span>
         </mat-toolbar>
         <router-outlet></router-outlet>
